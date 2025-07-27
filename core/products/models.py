@@ -32,3 +32,29 @@ class News(models.Model):
     data = models.CharField(verbose_name="название")
     opisanie = models.TextField(verbose_name="описание")
     photo = models.ImageField(verbose_name="сурот", null=True, blank=True)
+
+
+class Car(models.Model):
+
+    currency = [
+        ("Сом", 'Сом'),
+        ("Доллар", '$'),
+    ]
+
+
+    name = models.CharField()
+    volume = models.FloatField()
+    year = models.IntegerField()
+    country = models.CharField()
+    condition = models.CharField()
+    gearbox = models.CharField()
+    color = models.CharField()
+    price = models.IntegerField()
+    photo = models.ImageField()
+    weight = models.FloatField()
+    brand = models.CharField(default='mercedes')
+    transmission = models.CharField()
+    currency = models.CharField(verbose_name="Валюта", choices=currency, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Моделька для машин'

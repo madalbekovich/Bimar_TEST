@@ -13,3 +13,9 @@ class NewsListView(generics.ListAPIView):
     """Представление для списка новости"""
     queryset = models.News.objects.all()
     serializer_class = serializers.NewSerializer
+
+
+
+class CarListView(generics.ListAPIView):
+    queryset = models.Car.objects.all()
+    serializer_class = serializers.CarSerializer
